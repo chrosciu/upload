@@ -1,0 +1,20 @@
+<input id="fileupload" type="file" name="files[]" data-url="/upload.json" multiple>
+<input type="file" name="file_upload" id="file_upload" />
+<script>
+$(function () {
+  $('#fileupload').fileupload({
+      dataType: 'json',
+      done: function (e, data) {
+          alert('BUM')
+          //alert(data.result.foo)
+      }
+  });
+  });
+</script>
+<script>
+ $('#file_upload').uploadify({
+      'swf'      : '/assets/uploadify/uploadify.swf',
+      'uploader' : 'upload.json'
+      // Put your options here
+  });
+</script>
